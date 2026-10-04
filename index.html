@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta name="google-site-verification" content="VOO91MXMWNLaqQAm1wyT_es-3S3zjSO4fmHrRwzd7yE" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vito Dev Games</title>
+<meta name="description" content="Jogos de terror, ação e aventura criados por um desenvolvedor solo com ajuda de IA. Jogue e instale no celular ou no computador.">
+<meta name="theme-color" content="#0a0a1f">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07071a; --bg2:#0e0e2b; --card:#12123a; --line:#262660;
+  --fg:#e9e9ff; --dim:#9a9ac8;
+  --neon:#8b5cf6; --neon2:#22d3ee; --green:#7dff6a;
+  --disp:'Chakra Petch',system-ui,sans-serif; --body:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;
+  background-image:radial-gradient(900px 500px at 85% -5%,rgba(139,92,246,.28),transparent 60%),radial-gradient(700px 420px at 0% 30%,rgba(34,211,238,.12),transparent 60%);
+  background-attachment:fixed}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+
+/* topo */
+header{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);background:rgba(7,7,26,.75);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font:700 18px var(--disp);color:#fff;
+  background:linear-gradient(135deg,var(--neon),var(--neon2));box-shadow:0 0 22px rgba(139,92,246,.6)}
+.brand b{font:700 20px var(--disp);letter-spacing:.06em;text-transform:uppercase}
+.brand b span{color:var(--neon2)}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--dim);font-weight:500;font-size:15px;padding:8px 14px;border-radius:999px;transition:.2s}
+nav a:hover,nav a:focus-visible{color:var(--fg);background:rgba(139,92,246,.2);outline:none}
+
+/* capa com sobre mim */
+.cover-hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:center;padding-block:56px 28px}
+.perfil{border:1px solid var(--line);border-radius:22px;padding:26px;background:linear-gradient(160deg,#171748,#0c0c28);box-shadow:0 30px 80px -34px rgba(139,92,246,.6);display:grid;gap:14px;justify-items:start;min-width:0}
+.perfil .avatar{width:84px;height:84px;border-radius:22px;display:grid;place-items:center;font:700 40px var(--disp);color:#fff;background:linear-gradient(135deg,var(--neon),var(--neon2));box-shadow:0 0 34px rgba(139,92,246,.7)}
+.perfil h2{font:700 22px var(--disp);margin:0}
+.perfil p{margin:0;color:#c9c9ee;font-size:15px}
+.perfil .tags li{border-color:var(--neon)}
+.intro{padding:0}
+.intro small{font:600 13px var(--disp);letter-spacing:.22em;text-transform:uppercase;color:var(--neon2)}
+.intro h1{font:700 clamp(34px,6vw,64px)/1.05 var(--disp);margin:10px 0 14px;text-wrap:balance}
+.intro h1 em{font-style:normal;background:linear-gradient(90deg,var(--neon),var(--neon2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.intro p{max-width:56ch;color:var(--dim);font-size:18px;margin:0 0 12px}
+
+/* destaque */
+.feature{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:0;margin-block:28px 56px;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  background:linear-gradient(160deg,#171748,#0c0c28);box-shadow:0 0 0 1px rgba(139,92,246,.15),0 30px 80px -30px rgba(139,92,246,.55)}
+.art{position:relative;min-height:340px;display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(circle at 50% 45%,rgba(125,255,106,.28),transparent 55%),linear-gradient(180deg,#07130a,#040a06)}
+.art::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(100deg,transparent 0 22px,rgba(60,90,30,.22) 22px 26px);opacity:.7}
+.art svg{position:relative;width:min(70%,300px);height:auto;filter:drop-shadow(0 0 30px rgba(125,255,106,.5));animation:flutua 5s ease-in-out infinite}
+@keyframes flutua{50%{transform:translateY(-10px)}}
+.badge{position:absolute;top:16px;left:16px;font:600 12px var(--disp);letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.6);border:1px solid var(--green);color:var(--green)}
+.info{padding:clamp(22px,4vw,44px);display:flex;flex-direction:column;gap:16px;justify-content:center;min-width:0}
+.info h2{font:700 clamp(26px,4vw,40px)/1.1 var(--disp);margin:0;text-wrap:balance}
+.info p{margin:0;color:#c9c9ee}
+.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.tags li{font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);color:var(--dim);background:rgba(255,255,255,.03)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stats div{padding:12px;border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.25);text-align:center}
+.stats b{display:block;font:700 26px var(--disp);color:var(--neon2)}
+.stats span{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font:700 18px var(--disp);letter-spacing:.08em;text-transform:uppercase;
+  padding:16px 30px;border-radius:14px;color:#fff;background:linear-gradient(90deg,var(--neon),#6d3df0 55%,var(--neon2));
+  box-shadow:0 10px 34px -6px rgba(139,92,246,.8);transition:transform .2s,box-shadow .2s;align-self:flex-start}
+.btn:hover,.btn:focus-visible{transform:translateY(-3px);box-shadow:0 16px 44px -6px rgba(34,211,238,.7);outline:2px solid var(--fg);outline-offset:3px}
+.note{font-size:13px;color:var(--dim)}
+
+/* catalogo */
+.sec{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:18px}
+.sec h3{font:700 26px var(--disp);margin:0;letter-spacing:.04em}
+.sec span{color:var(--dim);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-bottom:64px}
+.game{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--card);text-decoration:none;transition:transform .2s,border-color .2s}
+a.game:hover,a.game:focus-visible{transform:translateY(-5px);border-color:var(--neon);outline:none}
+.game .cover{aspect-ratio:16/10;display:grid;place-items:center;font:700 40px var(--disp);color:rgba(255,255,255,.35);background:linear-gradient(135deg,#1b1b55,#0d0d2e)}
+.game .txt{padding:16px;display:flex;flex-direction:column;gap:4px}
+.game h4{margin:0;font:700 18px var(--disp)}
+.game p{margin:0;color:var(--dim);font-size:14px}
+.soon{border-style:dashed;opacity:.8}
+.soon .cover{font-size:34px}
+
+footer{border-top:1px solid var(--line);padding-block:26px;color:var(--dim);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
+
+@media (max-width:820px){
+  .cover-hero{grid-template-columns:1fr;padding-block:40px 20px}
+  .feature{grid-template-columns:1fr}
+  .art{min-height:260px}
+  .btn{align-self:stretch}
+  nav a{padding:8px 10px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Início">
+      <div class="logo">V</div>
+      <b>Vito <span>Dev</span> Games</b>
+    </a>
+    <nav aria-label="Principal">
+      <a href="#destaque">Destaque</a>
+      <a href="#jogos">Jogos</a>
+      <a href="#inicio">Sobre mim</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="wrap cover-hero" aria-label="Capa">
+    <div class="intro">
+      <small>Desenvolvedor solo · Jogos feitos com IA</small>
+      <h1>Eu crio jogos.<br>A IA ajuda a <em>dar vida</em>.</h1>
+      <p>Sou um adolescente, desenvolvedor solo, e quero começar uma carreira criando jogos feitos só com inteligência artificial. Terror, ação, aventura e o que mais vier na cabeça.</p>
+      <p>Cada jogo daqui roda no navegador e pode ser instalado no celular ou no computador.</p>
+    </div>
+    <aside class="perfil" aria-label="Sobre mim">
+      <div class="avatar">V</div>
+      <h2>Sobre mim</h2>
+      <p>Faço tudo sozinho: a ideia, as histórias e os testes. A IA escreve o código comigo, e eu decido o que o jogo precisa ser.</p>
+      <ul class="tags"><li>Terror</li><li>Ação</li><li>Aventura</li><li>Feito com IA</li></ul>
+    </aside>
+  </section>
+
+  <!-- ===== DESTAQUE (o JS abaixo preenche com o primeiro jogo da lista) ===== -->
+  <section class="wrap" id="destaque" aria-label="Jogo em destaque">
+    <article class="feature" id="feature"></article>
+  </section>
+
+  <!-- ===== CATALOGO ===== -->
+  <section class="wrap" id="jogos">
+    <div class="sec"><h3>Todos os jogos</h3><span id="contador"></span></div>
+    <div class="grid" id="grade"></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="ano"></span> Vito Dev Games</span>
+    <span>Feito com HTML, CSS e muito café.</span>
+  </div>
+</footer>
+
+<script>
+/* =====================================================
+   COMO ADICIONAR UM JOGO NOVO
+   Copie um bloco { ... } dentro da lista GAMES, cole logo abaixo
+   e troque os textos. Pronto: ele aparece na grade sozinho.
+   O primeiro jogo da lista vira o card de destaque.
+   ===================================================== */
+const GAMES = [
+  {
+    titulo: 'A Colheita do Silêncio 2D',
+    selo: 'Terror · Lançamento',
+    descricao: 'João comprou uma fazenda isolada para ter paz. Na primeira noite, uma luz cai do céu e algo verde começa a caminhar pelo milharal. Fuja da casa, atravesse o labirinto de milho, desça até a base alienígena, encontre uma arma e enfrente o Guardião. Leia os papéis, descubra o que o antigo dono escondeu e tente alcançar todos os finais.',
+    tags: ['Terror', '2D', 'Celular e computador', 'Português · English · Español'],
+    numeros: [['2', 'Capítulos'], ['12', 'Finais'], ['1', 'Chefão']],
+    link: 'colheita/',
+    botao: 'Jogar & Instalar',
+    arte: 'et'
+  }
+  /* ,{
+    titulo: 'Nome do próximo jogo',
+    selo: 'Ação',
+    descricao: 'Uma frase curta sobre o jogo.',
+    tags: ['Ação'], numeros: [['1','Fase']],
+    link: 'https://vito77-dev.github.io/nome-do-repositorio/',
+    botao: 'Jogar', arte: ''
+  } */
+];
+const QUANTOS_SLOTS_VAZIOS = 2;
+
+const ET_SVG = `<svg viewBox="0 0 200 240" role="img" aria-label="Alienígena verde">
+  <defs><radialGradient id="pele" cx="50%" cy="28%" r="75%"><stop offset="0" stop-color="#a6f08a"/><stop offset=".55" stop-color="#58b14a"/><stop offset="1" stop-color="#2c6d2b"/></radialGradient></defs>
+  <path d="M100 8C150 8 178 58 170 108c-6 40-34 86-70 120C64 194 36 148 30 108 22 58 50 8 100 8Z" fill="url(#pele)" stroke="#1d4a1c" stroke-width="3"/>
+  <ellipse cx="62" cy="108" rx="34" ry="22" transform="rotate(24 62 108)" fill="#030603"/>
+  <ellipse cx="138" cy="108" rx="34" ry="22" transform="rotate(-24 138 108)" fill="#030603"/>
+  <circle cx="52" cy="102" r="6" fill="#c9ffb8"/><circle cx="128" cy="102" r="6" fill="#c9ffb8"/>
+  <ellipse cx="94" cy="158" rx="3" ry="4" fill="#1d4a1c"/><ellipse cx="106" cy="158" rx="3" ry="4" fill="#1d4a1c"/>
+  <path d="M88 184q12 8 24 0" fill="none" stroke="#1d4a1c" stroke-width="3" stroke-linecap="round"/>
+</svg>`;
+
+function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+/* destaque */
+const g0 = GAMES[0];
+if (g0) {
+  document.getElementById('feature').innerHTML = `
+    <div class="art">
+      <span class="badge">${esc(g0.selo)}</span>
+      ${g0.arte==='et' ? ET_SVG : ''}
+    </div>
+    <div class="info">
+      <h2>${esc(g0.titulo)}</h2>
+      <p>${esc(g0.descricao)}</p>
+      <ul class="tags">${g0.tags.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>
+      <div class="stats">${g0.numeros.map(n=>`<div><b>${esc(n[0])}</b><span>${esc(n[1])}</span></div>`).join('')}</div>
+      <a class="btn" href="${esc(g0.link)}">${esc(g0.botao)} &rarr;</a>
+      <span class="note">Abre o jogo. No menu dele, toque em "Instalar o jogo" para criar o ícone na tela inicial.</span>
+    </div>`;
+}
+
+/* grade */
+const grade = document.getElementById('grade');
+GAMES.forEach(g=>{
+  grade.appendChild(el(`<a class="game" href="${esc(g.link)}">
+    <div class="cover">${g.arte==='et' ? '<span style="width:70px;display:block">'+ET_SVG+'</span>' : esc(g.titulo.slice(0,1))}</div>
+    <div class="txt"><h4>${esc(g.titulo)}</h4><p>${esc(g.selo)}</p></div></a>`));
+});
+for(let i=0;i<QUANTOS_SLOTS_VAZIOS;i++){
+  grade.appendChild(el(`<div class="game soon"><div class="cover">?</div><div class="txt"><h4>Em breve</h4><p>Próximo jogo em produção</p></div></div>`));
+}
+document.getElementById('contador').textContent = GAMES.length + (GAMES.length===1?' jogo publicado':' jogos publicados');
+document.getElementById('ano').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

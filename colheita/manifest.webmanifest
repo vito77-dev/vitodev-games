@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "A Colheita do Silêncio 2D",
+  "short_name": "Colheita 2D",
+  "description": "Jogo de terror 2D numa fazenda isolada. 2 capítulos e 12 finais.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "landscape",
+  "background_color": "#000000",
+  "theme_color": "#0b1a0b",
+  "lang": "pt-BR",
+  "categories": ["games"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
